@@ -311,6 +311,85 @@ fi
 #################
 
 
+##################
+##START Anonsurf##
+START()
+{
+		echo "" && echo -e "$cyan"
+		echo -n -e $red"  Do You Want To Start Anonsurf Mode?$cyan ( YES / NO ) : " ;tput sgr0
+		read anon
+	if [ -z "$anon" ]; then
+		
+ 				echo -n -e $red"  Do you want exit?$cyan ( Yes / No ) : " ;tput sgr0
+					read back
+						if [ -z "$back" ]; then
+							exit
+							fi
+						if [ $back != 'n' ] && [ $back != 'N' ] && [ $back != 'no' ] && [ $back != 'No' ]
+												then
+													echo "" && echo -e $BlueF" [$white"*"$BlueF]$red  Exiting ..." && sleep 0.2
+                                                 	echo -e $BlueF" [$white"*"$BlueF]$red  GoodBye!"
+	                                                exit 0
+										elif [ $back != 'y' ] && [ $back != 'Y' ] && [ $back != 'yes' ] && [ $back != 'Yes' ]
+												then
+												clear
+                                                attacker
+		fi
+	fi
+						if [ $anon != 'n' ] && [ $anon != 'N' ] && [ $anon != 'no' ] && [ $anon != 'No' ]
+												then
+													anonsurf start
+													clear
+													attacker
+										elif [ $anon != 'y' ] && [ $anon != 'Y' ] && [ $anon != 'yes' ] && [ $anon != 'Yes' ]
+												then
+												clear
+                                                attacker
+		fi
+}
+###END Anonsurf##
+#################
+
+##################
+##STOP Anonsurf##
+STOP()
+{
+		echo "" && echo -e "$cyan"
+		echo -n -e $red"  Do You Want To STOP Anonsurf Mode?$cyan ( YES / NO ) : " ;tput sgr0
+		read Anon
+	if [ -z "$Anon" ]; then
+		
+ 				echo -n -e $red"  Do you want exit?$cyan ( Yes / No ) : " ;tput sgr0
+					read back
+						if [ -z "$back" ]; then
+							exit
+							fi
+						if [ $back != 'n' ] && [ $back != 'N' ] && [ $back != 'no' ] && [ $back != 'No' ]
+												then
+													echo "" && echo -e $BlueF" [$white"*"$BlueF]$red  Exiting ..." && sleep 0.2
+                                                 	echo -e $BlueF" [$white"*"$BlueF]$red  GoodBye!"
+	                                                exit 0
+										elif [ $back != 'y' ] && [ $back != 'Y' ] && [ $back != 'yes' ] && [ $back != 'Yes' ]
+												then
+												clear
+                                                attacker
+		fi
+	fi
+						if [ $Anon != 'n' ] && [ $Anon != 'N' ] && [ $Anon != 'no' ] && [ $Anon != 'No' ]
+												then
+													anonsurf stop
+													clear
+													attacker
+										elif [ $Anon != 'y' ] && [ $Anon != 'Y' ] && [ $Anon != 'yes' ] && [ $Anon != 'Yes' ]
+												then
+												clear
+                                                attacker
+		fi
+}
+###END Anonsurf##
+#################
+
+
 
 #######################
 #######################
@@ -331,8 +410,8 @@ echo ""
 echo -e "$white       |--------- Author: Mr. H4CK3R | FB.com/AriR.Abdulla ---------|"
 echo "" && echo "" && echo "" && echo -e "$green" && sleep 0.9
 echo -e $BlueF"	[$white"01"$BlueF]$cyan  BotNet             $BlueF	[$white"05"$BlueF]$cyan  Hammer"
-echo -e $BlueF"	[$white"02"$BlueF]$cyan  SlowLoris          $BlueF	[$white"06"$BlueF]$cyan  "
-echo -e $BlueF"	[$white"03"$BlueF]$cyan  XerXes             $BlueF	[$white"07"$BlueF]$cyan  "
+echo -e $BlueF"	[$white"02"$BlueF]$cyan  SlowLoris          $BlueF	[$white"06"$BlueF]$cyan  Start AnonSurf"
+echo -e $BlueF"	[$white"03"$BlueF]$cyan  XerXes             $BlueF	[$white"07"$BlueF]$cyan  Stop Anonsurf"
 echo -e $BlueF"	[$white"04"$BlueF]$cyan  GoldenEye          $BlueF	[$white"08"$BlueF]$cyan  Exit"
 echo -e " " && echo -e ""
 echo -n -e $red'  \033[4mATTACKER:\033[0m >> '; tput sgr0 #insert your choice
@@ -354,8 +433,15 @@ XerXes
 GoldenEYE
 	elif [ "$ATTACKER" = "5" ]; then
 HAMMER
+	elif [ "$ATTACKER" = "6" ]; then
+START
+	elif [ "$ATTACKER" = "7" ]; then
+STOP
+
 fi
 }
+
+
 #######################
 ####################### 
 attacker
